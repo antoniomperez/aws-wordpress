@@ -1,0 +1,16 @@
+version: 0.2
+
+phase:
+  install:
+    commands:
+      - npm install -g npm
+      - yarn install
+  build:
+    commands:
+      - yarn test
+      - yarn cdk synthesize PipelineTestStack
+
+artifacts:
+  base-directory: cdk.out
+  files:
+    - '**.*'
