@@ -9,6 +9,8 @@ phases:
     commands:
       - yarn test
       - yarn cdk synthesize PipelineTestStack
+      - yarn bump
+      - git push --follow-tags origin develop
 
 artifacts:
   base-directory: cdk.out
